@@ -32,7 +32,7 @@ const ShareTrip = ({ user }) => {
         setMessage('');
 
         try {
-            const res = await fetch(`http://127.0.0.1:8080/trips/addSharedUser?tripId=${tripId}&email=${email}&role=${role}`, {
+            const res = await fetch(`http://https://triplens-duml.onrender.com/trips/addSharedUser?tripId=${tripId}&email=${email}&role=${role}`, {
                 method: 'POST'
             });
 

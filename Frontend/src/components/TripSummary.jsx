@@ -21,7 +21,7 @@ const TripSummary = ({ user }) => {
         const fetchTripDetails = async () => {
             try {
                 // Fetch Trip Details
-                const tripRes = await fetch(`http://127.0.0.1:8080/trips/getTripById?tripId=${tripId}`, {
+                const tripRes = await fetch(`http://https://triplens-duml.onrender.com/trips/getTripById?tripId=${tripId}`, {
                     method: 'POST'
                 });
 
@@ -32,7 +32,7 @@ const TripSummary = ({ user }) => {
                     // Fetch Itinerary if it exists
                     if (tripData.itineraryId) {
                         try {
-                            const itinRes = await fetch(`http://127.0.0.1:8080/api/itineraries/getItinerary?itineraryId=${tripData.itineraryId}`, {
+                            const itinRes = await fetch(`http://https://triplens-duml.onrender.com/api/itineraries/getItinerary?itineraryId=${tripData.itineraryId}`, {
                                 method: 'POST'
                             });
                             if (itinRes.ok) {
