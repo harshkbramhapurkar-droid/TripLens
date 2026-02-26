@@ -163,7 +163,7 @@ const CreateItinerary = ({ user }) => {
                             ]);
 
                             // Get Route
-                            const routeRes = await fetch(`http://router.project-osrm.org/route/v1/driving/${startCoords[1]},${startCoords[0]};${destCoords[1]},${destCoords[0]}?overview=full&geometries=geojson`);
+                            const routeRes = await fetch(`https://router.project-osrm.org/route/v1/driving/${startCoords[1]},${startCoords[0]};${destCoords[1]},${destCoords[0]}?overview=full&geometries=geojson`);
                             const routeData = await routeRes.json();
 
                             if (routeData.routes && routeData.routes.length > 0) {
@@ -226,7 +226,7 @@ const CreateItinerary = ({ user }) => {
         const coordString = validSpots.map(s => `${s.lon},${s.lat}`).join(';');
 
         try {
-            const tripRes = await fetch(`http://router.project-osrm.org/trip/v1/driving/${coordString}?overview=full&geometries=geojson`);
+            const tripRes = await fetch(`https://router.project-osrm.org/trip/v1/driving/${coordString}?overview=full&geometries=geojson`);
             const tripData = await tripRes.json();
             if (tripData.trips && tripData.trips.length > 0) {
                 const coordinates = tripData.trips[0].geometry.coordinates.map(c => [c[1], c[0]]);
