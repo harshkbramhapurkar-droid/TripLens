@@ -86,7 +86,7 @@ const CreateItinerary = ({ user }) => {
                     try {
                         // Capitalize destination for backend compatibility
                         const formattedDestination = destination.charAt(0).toUpperCase() + destination.slice(1).toLowerCase();
-                        const hotelRes = await fetch(`https://triplens-duml.onrender.com/api/hotels/${formattedDestination}`);
+                        const hotelRes = await fetch(`http://127.0.0.1:8080/api/hotels/${formattedDestination}`);
                         if (hotelRes.ok) {
                             const hotelData = await hotelRes.json();
                             setHotels(hotelData);
@@ -97,7 +97,7 @@ const CreateItinerary = ({ user }) => {
 
                     // Fetch Tourist Spots
                     try {
-                        const spotRes = await fetch(`https://triplens-duml.onrender.com/api/spots/nearby?location=${destination}`);
+                        const spotRes = await fetch(`http://127.0.0.1:8080/api/spots/nearby?location=${destination}`);
                         if (spotRes.ok) {
                             const spotData = await spotRes.json();
                             setTouristSpots(spotData);
@@ -108,7 +108,7 @@ const CreateItinerary = ({ user }) => {
 
                     // Fetch Festivals
                     try {
-                        const festRes = await fetch(`https://triplens-duml.onrender.com/api/festivals?city=${destination}`);
+                        const festRes = await fetch(`http://127.0.0.1:8080/api/festivals?city=${destination}`);
                         if (festRes.ok) {
                             const festData = await festRes.json();
                             setFestivals(festData);
@@ -121,7 +121,7 @@ const CreateItinerary = ({ user }) => {
                 if (startLocation && destination) {
                     // Fetch Trains
                     try {
-                        const trainRes = await fetch(`https://triplens-duml.onrender.com/api/trains/search?origin=${startLocation}&destination=${destination}`, {
+                        const trainRes = await fetch(`http://127.0.0.1:8080/api/trains/search?origin=${startLocation}&destination=${destination}`, {
                             method: 'POST'
                         });
                         if (trainRes.ok) {
@@ -134,7 +134,7 @@ const CreateItinerary = ({ user }) => {
 
                     // Fetch Flights
                     try {
-                        const flightRes = await fetch(`https://triplens-duml.onrender.com/api/flights/search?from=${startLocation}&to=${destination}&date=${date || ''}`);
+                        const flightRes = await fetch(`http://127.0.0.1:8080/api/flights/search?from=${startLocation}&to=${destination}&date=${date || ''}`);
                         if (flightRes.ok) {
                             const flightData = await flightRes.json();
                             setFlights(flightData);
@@ -307,14 +307,14 @@ const CreateItinerary = ({ user }) => {
             let res;
             if (initialItinerary && initialItinerary.id) {
                 // UPDATE existing itinerary
-                res = await fetch(`https://triplens-duml.onrender.com/api/itineraries/updateItinerary?itineraryId=${initialItinerary.id}`, {
+                res = await fetch(`http://127.0.0.1:8080/api/itineraries/updateItinerary?itineraryId=${initialItinerary.id}`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(payload)
                 });
             } else {
                 // CREATE new itinerary
-                res = await fetch(`https://triplens-duml.onrender.com/api/itineraries/addItinerary?tripId=${activeTripId}`, {
+                res = await fetch(`http://127.0.0.1:8080/api/itineraries/addItinerary?tripId=${activeTripId}`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(payload)
