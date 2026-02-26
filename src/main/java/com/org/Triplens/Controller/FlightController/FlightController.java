@@ -13,7 +13,7 @@ import com.org.Triplens.DTO.AeroFlightDTO;
 import com.org.Triplens.Services.Flight.AirportResolverService;
 import com.org.Triplens.Services.Flight.FlightService;
 
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = "https://triplensv1.netlify.app")
 @RestController
 @RequestMapping("/api/flights")
 public class FlightController {

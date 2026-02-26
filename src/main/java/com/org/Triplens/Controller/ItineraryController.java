@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.org.Triplens.Services.ItirneraryService;
 import com.org.Triplens.entity.Itinerary;
 
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = "https://triplensv1.netlify.app")
 @RestController
 @RequestMapping("/api/itineraries")
 public class ItineraryController {

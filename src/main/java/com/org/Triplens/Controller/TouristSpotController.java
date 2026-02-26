@@ -17,7 +17,7 @@ import com.org.Triplens.repository.TouristSpotRepository;
 
 @RestController
 @RequestMapping("/api/spots") // Changed endpoint to avoid conflict with /trips
-@CrossOrigin(origins = "http://localhost:5173") // Matched frontend port
+@CrossOrigin(origins = "https://triplensv1.netlify.app") // Matched frontend port
 public class TouristSpotController {
 
     @Autowired

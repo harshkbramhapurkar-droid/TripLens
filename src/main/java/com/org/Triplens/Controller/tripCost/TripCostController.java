@@ -16,7 +16,7 @@ import com.org.Triplens.Services.TripCost.PricingService;
 
 @RestController
 @RequestMapping("/api/trip")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "https://triplensv1.netlify.app")
 public class TripCostController {
 
 	private final GeoCodingService geoCodingService;

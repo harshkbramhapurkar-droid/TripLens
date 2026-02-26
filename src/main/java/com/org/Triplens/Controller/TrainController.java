@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.org.Triplens.Services.TrainServices.TrainService;
 import com.org.Triplens.entity.Train;
 
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = "https://triplensv1.netlify.app")
 @RestController
 @RequestMapping("/api/trains")
 public class TrainController {

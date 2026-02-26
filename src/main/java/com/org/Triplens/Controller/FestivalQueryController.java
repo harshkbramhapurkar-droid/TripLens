@@ -15,7 +15,7 @@ import com.org.Triplens.entity.FestivalEntity;
 
 @RestController
 @RequestMapping("/api/festivals")
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = "https://triplensv1.netlify.app")
 public class FestivalQueryController {
 
     @Autowired private FestivalDao festivalDao;
