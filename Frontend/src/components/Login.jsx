@@ -18,7 +18,7 @@ const Login = ({ onLogin }) => {
 
         try {
             // 1. Authenticate
-            const authResponse = await fetch('http://localhost:8080/users/authenticate', {
+            const authResponse = await fetch('https://triplens-duml.onrender.com/users/authenticate', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                 body: new URLSearchParams({ email, password })
@@ -28,7 +28,7 @@ const Login = ({ onLogin }) => {
 
             if (isAuthenticated) {
                 // 2. Get User Details
-                const userResponse = await fetch('http://localhost:8080/users/finduser', {
+                const userResponse = await fetch('https://triplens-duml.onrender.com/users/finduser', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                     body: new URLSearchParams({ email })

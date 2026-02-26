@@ -20,7 +20,7 @@ const UserProfile = ({ user }) => {
     const fetchTrips = async () => {
         try {
             const userId = user.objectId || user.id || user.userId;
-            const response = await fetch(`http://localhost:8080/trips/getTripsByUserId?userId=${userId}`, {
+            const response = await fetch(`https://triplens-duml.onrender.com/trips/getTripsByUserId?userId=${userId}`, {
                 method: 'POST'
             });
 
@@ -42,7 +42,7 @@ const UserProfile = ({ user }) => {
         e.stopPropagation(); // Prevent navigating to summary
         if (window.confirm("Are you sure you want to delete this trip?")) {
             try {
-                const res = await fetch(`http://localhost:8080/trips/deleteTrip?tripId=${tripId}`, {
+                const res = await fetch(`https://triplens-duml.onrender.com/trips/deleteTrip?tripId=${tripId}`, {
                     method: 'POST'
                 });
                 if (res.ok) {
