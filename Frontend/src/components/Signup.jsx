@@ -16,7 +16,7 @@ const Signup = ({ onLogin }) => {
         setLoading(true);
 
         try {
-            const response = await fetch('http://https://triplens-duml.onrender.com/users/addUser', {
+            const response = await fetch('https://triplens-duml.onrender.com/users/addUser', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                 body: new URLSearchParams({ name, email, password })

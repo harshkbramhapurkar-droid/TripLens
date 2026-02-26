@@ -59,7 +59,7 @@ const CreateTrip = ({ user }) => {
                 throw new Error("User ID not found. Please login again.");
             }
 
-            const response = await fetch(`http://https://triplens-duml.onrender.com/trips/addTrip?userId=${userId}`, {
+            const response = await fetch(`https://triplens-duml.onrender.com/trips/addTrip?userId=${userId}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
